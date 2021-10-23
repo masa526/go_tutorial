@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func Eat(name string) (bool, error) {
 	if name == "" {
@@ -13,11 +16,11 @@ func Eat(name string) (bool, error) {
 func main() {
 	var name1 string = "GYUDON"
 	if _, err := Eat(name1); err != nil {
-		fmt.Println("cannt eat: ", err)
+		fmt.Fprintf(os.Stderr, "cannot eat: '%s'\n" , err)
 	}
 
 	var name2 string = ""
 	if _, err := Eat(name2); err != nil {
-		fmt.Println("cannt eat: ", err)
+		fmt.Fprintf(os.Stderr, "cannot eat: '%s'\n" , err)
 	}
 }
