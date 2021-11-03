@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	var name1 string = "GYUDON"
+	var name1 string = "OYAKODON"
 	if _, err := shop.Eat(name1); err != nil {
 		fmt.Fprintf(os.Stderr, "cannot eat: '%s'\n", err) //更新
 	}
